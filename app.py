@@ -11,6 +11,3 @@ def webhook():
     msg = request.get_data(as_text=True)
     requests.post(WXWORK_URL, json={"msgtype": "text", "text": {"content": msg}})
     return "ok"
-
-if __name__ == "__main__":
-app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
